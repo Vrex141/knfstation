@@ -108,10 +108,10 @@ var/list/adminhelp_ignored_words = list("unknown","the","a","an","of","monkey","
 		X << msg
 
 	//show it to the person adminhelping too
-	src << "<font color='blue'>PM to-<b>Admins</b>: [original_msg]</font>"
+	src << "<font color='blue'>PM to-<b>Admins</b>: [sanitize(original_msg)]</font>"
 
 	var/admin_number_present = admin_number_total - admin_number_decrease	//Number of admins who are neither afk nor invalid
-	log_admin("HELP: [key_name(src)]: [original_msg] - heard by [admin_number_present] non-AFK admins who have +BAN.")
+	log_admin("HELP: [key_name(src)]: [sanitize(original_msg)] - heard by [admin_number_present] non-AFK admins who have +BAN.")
 	if(admin_number_present <= 0)
 		if(!admin_number_afk && !admin_number_ignored)
 			send2irc(ckey, "[original_msg] - No admins online")
