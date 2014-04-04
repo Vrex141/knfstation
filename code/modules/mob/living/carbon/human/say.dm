@@ -1,5 +1,5 @@
 /mob/living/carbon/human/say(var/message)
-	message = sanitize(message)
+
 	if(silent)
 		return
 

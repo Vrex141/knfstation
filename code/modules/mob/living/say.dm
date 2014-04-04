@@ -327,7 +327,7 @@ var/list/department_radio_keys = list(
 		if (italics)
 			message_a = "<i>[message_a]</i>"
 
-		rendered = "<span class='game say'><span class='name'>[GetVoice()]</span>[alt_name] <span class='message'>[sanitize(message_a)]</span></span>"
+		rendered = "<span class='game say'><span class='name'>[GetVoice()]</span>[alt_name] <span class='message'>[message_a]</span></span>"
 
 		for (var/M in heard_a)
 			if(hascall(M,"show_message"))
@@ -352,7 +352,7 @@ var/list/department_radio_keys = list(
 		if (italics)
 			message_b = "<i>[message_b]</i>"
 
-		rendered = "<span class='game say'><span class='name'>[voice_name]</span> <span class='message'>[sanitize(message_b)]</span></span>"
+		rendered = "<span class='game say'><span class='name'>[voice_name]</span> <span class='message'>[message_b]</span></span>"
 
 
 		for (var/M in heard_b)
@@ -365,7 +365,7 @@ var/list/department_radio_keys = list(
 		if(M.client)
 			speech_bubble_recipients.Add(M.client)
 	spawn(0)
-		flick_overlay(image('icons/mob/talk.dmi', src, "h[bubble_type][say_test(sanitize(message))]",MOB_LAYER+1), speech_bubble_recipients, 30)
+		flick_overlay(image('icons/mob/talk.dmi', src, "h[bubble_type][say_test(message)]",MOB_LAYER+1), speech_bubble_recipients, 30)
 
 	log_say("[name]/[key] : [message]")
 

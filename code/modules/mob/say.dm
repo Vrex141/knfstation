@@ -17,7 +17,6 @@
 /mob/verb/me_verb(message as text)
 	set name = "Me"
 	set category = "IC"
-
 	if(say_disabled)	//This is here to try to identify lag problems
 		usr << "\red Speech is currently admin-disabled."
 		return
@@ -32,7 +31,6 @@
 /mob/proc/say_dead(var/message)
 	var/name = src.real_name
 	var/alt_name = ""
-
 	if(say_disabled)	//This is here to try to identify lag problems
 		usr << "\red Speech is currently admin-disabled."
 		return
