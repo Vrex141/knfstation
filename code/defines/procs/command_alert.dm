@@ -1,11 +1,12 @@
 /proc/command_alert(var/text, var/title = "")
 	var/command
 	command += "<h1 class='alert'>[command_name()] Update</h1>"
-
+	title = copytext(sanitize(title),1,MAX_MESSAGE_LEN)
+	text = copytext(sanitize(text),1,MAX_MESSAGE_LEN)
 	if (title && length(title) > 0)
-		command += "<br><h2 class='alert'>[html_encode(sanitize(title))]</h2>"
+		command += "<br><h2 class='alert'>[html_encode(title)]</h2>"
 
-	command += "<br><span class='alert'>[html_encode(sanitize(text))]</span><br>"
+	command += "<br><span class='alert'>[html_encode(text)]</span><br>"
 	command += "<br>"
 	for(var/mob/M in player_list)
 		if(!istype(M,/mob/new_player))
@@ -13,4 +14,4 @@
 	if(title == "")
 		news_network.SubmitArticle(text, "Centcom Official", "Central Command", null)
 	else
-		news_network.SubmitArticle(title + "<br><br>" + sanitize(text), "Centcom Official", "Central Command", null)
+		news_network.SubmitArticle(title + "<br><br>" + text, "Centcom Official", "Central Command", null)

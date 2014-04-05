@@ -142,7 +142,7 @@
 
 
 /obj/item/weapon/paper/proc/updateinfolinks()
-	info_links = sanitize(info)
+	info_links = info
 	var/i = 0
 	for(i=1,i<=fields,i++)
 		addtofield(i, "<font face=\"[deffont]\"><A href='?src=\ref[src];write=[i]'>write</A></font>", 1)
@@ -162,9 +162,7 @@
 	if(length(t) < 1)		//No input means nothing needs to be parsed
 		return
 
-//
-	t = copytext(sanitize(t),1,MAX_MESSAGE_LEN)
-
+//	t = copytext(sanitize(t),1,MAX_MESSAGE_LEN)
 	t = replacetext(t, "\[center\]", "<center>")
 	t = replacetext(t, "\[/center\]", "</center>")
 	t = replacetext(t, "\[br\]", "<BR>")
@@ -241,7 +239,7 @@
 
 	if(href_list["write"])
 		var/id = href_list["write"]
-		var/t =  strip_html_simple(sanitize(input("Enter what you want to write:", "Write", null, null)  as message, MAX_MESSAGE_LEN))
+		var/t =  strip_html_simple(input("Enter what you want to write:", "Write", null, null)  as message, MAX_MESSAGE_LEN)
 		var/obj/item/i = usr.get_active_hand()	//Check to see if he still got that darn pen, also check if he's using a crayon or pen.
 		var/iscrayon = 0
 		if(!istype(i, /obj/item/weapon/pen))
@@ -252,7 +250,7 @@
 		if(!in_range(src, usr) && loc != usr && !istype(loc, /obj/item/weapon/clipboard) && loc.loc != usr && usr.get_active_hand() != i)	//Some check to see if he's allowed to write
 			return
 
-		t = parsepencode(t, i, usr, iscrayon) // Encode everything from pencode to html
+		t = sanitize(parsepencode(t, i, usr, iscrayon)) // Encode everything from pencode to html
 
 		if(t != null)	//No input from the user means nothing needs to be added
 			if(id!="end")
