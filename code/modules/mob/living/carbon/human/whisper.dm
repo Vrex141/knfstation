@@ -137,7 +137,7 @@
 
 	if (italics)
 		message = "<i>[sanitize(message)]</i>"
-	rendered = "<span class='game say'><span class='name'>[GetVoice()]</span>[alt_name] [whispers], <span class='message'>\"[sanitize(message)]\"</span></span>"
+	rendered = "<span class='game say'><span class='name'>[GetVoice()]</span>[alt_name] [whispers], <span class='message'>\"[message]\"</span></span>"
 
 	for (var/mob/M in dead_mob_list)
 		if (!(M.client))

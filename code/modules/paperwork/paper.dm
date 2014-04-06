@@ -73,7 +73,7 @@
 		usr << "<span class='warning'>You cut yourself on the paper! Ahhhh! Ahhhhh!</span>"
 		usr.damageoverlaytemp = 9001
 		return
-	var/n_name = copytext(sanitize(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text), 1, MAX_NAME_LEN)
+	var/n_name = copytext(input(usr, "What would you like to label the paper?", "Paper Labelling", null)  as text, 1, MAX_NAME_LEN)
 	if((loc == usr && usr.stat == 0))
 		name = "paper[(n_name ? text("- '[n_name]'") : null)]"
 	add_fingerprint(usr)
@@ -250,7 +250,7 @@
 		if(!in_range(src, usr) && loc != usr && !istype(loc, /obj/item/weapon/clipboard) && loc.loc != usr && usr.get_active_hand() != i)	//Some check to see if he's allowed to write
 			return
 
-		t = sanitize(parsepencode(t, i, usr, iscrayon)) // Encode everything from pencode to html
+		t = parsepencode(sanitize(t), i, usr, iscrayon) // Encode everything from pencode to html
 
 		if(t != null)	//No input from the user means nothing needs to be added
 			if(id!="end")
