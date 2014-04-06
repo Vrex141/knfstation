@@ -57,7 +57,7 @@
 /datum/feed_network/proc/SubmitArticle(var/msg, var/author, var/channel_name, var/obj/item/weapon/photo/photo, var/adminMessage = 0)
 	var/datum/feed_message/newMsg = new /datum/feed_message
 	newMsg.author = author
-	newMsg.body = msg
+	newMsg.body = sanitize(msg)
 	newMsg.time_stamp = "[worldtime2text()]"
 	newMsg.is_admin_message = adminMessage
 	if(photo)
@@ -291,7 +291,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 				dat+="Creating new Feed Message..."
 				dat+="<HR><B><A href='?src=\ref[src];set_channel_receiving=1'>Receiving Channel</A>:</B> [src.channel_name]<BR>" //MARK
 				dat+="<B>Message Author:</B> <FONT COLOR='green'>[src.scanned_user]</FONT><BR>"
-				dat+="<B><A href='?src=\ref[src];set_new_message=1'>Message Body</A>:</B> [src.msg] <BR>"
+				dat+="<B><A href='?src=\ref[src];set_new_message=1'>Message Body</A>:</B> [sanitize(src.msg)] <BR>"
 				dat+="<B><A href='?src=\ref[src];set_attachment=1'>Attach Photo</A>:</B>  [(src.photo ? "Photo Attached" : "No Photo")]</BR>"
 				dat+="<BR><A href='?src=\ref[src];submit_new_message=1'>Submit</A><BR><BR><A href='?src=\ref[src];setScreen=[0]'>Cancel</A><BR>"
 			if(4)
