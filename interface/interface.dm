@@ -94,6 +94,9 @@ Any-Mode: (hotkey doesn't need to be on)
 \tPGUP = swap-hand
 \tPGDN = activate held object
 \tEND = throw
+\tF2 = OOC
+\tF3 = Whisper
+\tF4 = Me
 </font>"}
 
 	src << hotkey_mode
