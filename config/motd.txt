@@ -2,4 +2,6 @@
 
 <h1>Welcome to /knf/ Station 13!</h1>
 
+Группа ВКонтакте: https://vk.com/knfstation
+
 <i>This server is running a /tg/station 13 SVN build.</i>

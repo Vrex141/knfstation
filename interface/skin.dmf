@@ -184,12 +184,24 @@ macro "borghotkeymode"
 		command = ".options"
 		is-disabled = false
 	elem 
+		name = "F2"
+		command = "ooc"
+		is-disabled = false
+	elem 
 		name = "F2+REP"
 		command = ".screenshot auto"
 		is-disabled = false
 	elem 
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
+		is-disabled = false
+	elem 
+		name = "F3"
+		command = "whisper"
+		is-disabled = false
+	elem 
+		name = "F4"
+		command = "me"
 		is-disabled = false
 	elem 
 		name = "F5"
@@ -206,6 +218,10 @@ macro "borghotkeymode"
 	elem 
 		name = "F8"
 		command = "Invisimin"
+		is-disabled = false
+	elem 
+		name = "F9"
+		command = "asay"
 		is-disabled = false
 	elem 
 		name = "F12"
@@ -600,12 +616,24 @@ macro "hotkeymode"
 		command = ".options"
 		is-disabled = false
 	elem 
+		name = "F2"
+		command = "ooc"
+		is-disabled = false
+	elem 
 		name = "F2+REP"
 		command = ".screenshot auto"
 		is-disabled = false
 	elem 
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
+		is-disabled = false
+	elem 
+		name = "F3"
+		command = "whisper"
+		is-disabled = false
+	elem 
+		name = "F4"
+		command = "me"
 		is-disabled = false
 	elem 
 		name = "F5"
@@ -622,6 +650,10 @@ macro "hotkeymode"
 	elem 
 		name = "F8"
 		command = "Invisimin"
+		is-disabled = false
+	elem 
+		name = "F9"
+		command = "asay"
 		is-disabled = false
 	elem 
 		name = "F12"
@@ -754,12 +786,24 @@ macro "borgmacro"
 		command = ".options"
 		is-disabled = false
 	elem 
+		name = "F2"
+		command = "ooc"
+		is-disabled = false
+	elem 
 		name = "F2+REP"
 		command = ".screenshot auto"
 		is-disabled = false
 	elem 
 		name = "SHIFT+F2+REP"
 		command = ".screenshot"
+		is-disabled = false
+	elem 
+		name = "F3"
+		command = "whisper"
+		is-disabled = false
+	elem 
+		name = "F4"
+		command = "me"
 		is-disabled = false
 	elem 
 		name = "F5"
@@ -776,6 +820,10 @@ macro "borgmacro"
 	elem 
 		name = "F8"
 		command = "Invisimin"
+		is-disabled = false
+	elem 
+		name = "F9"
+		command = "asay"
 		is-disabled = false
 	elem 
 		name = "F12"
